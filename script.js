@@ -76,16 +76,16 @@ function collapse(panel){
 
 
 function wideCollapse(){
-    $("#opener").animate({height: "10vh", backgroundColor: "#0F2C59"}, duration=2000)
-    $("#title").animate({height: "9vh", width: "20vw", padding: "0 5vw", top: "0.5vh", fontSize: "20px"}, duration=2000)
-    $("nav").animate({height: "8vh", width: "60vw", left: "30vw", top: "1vh"}, duration=2000)
+    $("#opener").animate({height: "10svh", backgroundColor: "#0F2C59"}, duration=2000)
+    $("#title").animate({height: "9svh", width: "20vw", padding: "0 5vw", top: "0.5svh", fontSize: "20px"}, duration=2000)
+    $("nav").animate({height: "8svh", width: "60vw", left: "30vw", top: "1svh"}, duration=2000)
     $("nav div").animate({fontSize: "18px"}, duration=2000)
 }
 
 function narrowCollapse(){
     $("#burger").css("display", "block")
-    $("#opener").animate({height: "10vh", backgroundColor: "#0F2C59"}, duration=2000)
-    $("#title").animate({height: "8vh", top: "1vh", fontSize: "20px"}, duration=2000)
+    $("#opener").animate({height: "10svh", backgroundColor: "#0F2C59"}, duration=2000)
+    $("#title").animate({height: "8svh", top: "1svh", fontSize: "20px"}, duration=2000)
     $("#title div:last-child").animate({paddingTop: "0"})
     $("nav").animate({opacity: "0", top: "0"}, duration=2000)
     $("#burger").animate({opacity: "1"}, duration=2000)
@@ -96,7 +96,7 @@ function narrowCollapse(){
 
 function showPanel(panel){
     if (dropped){
-        $("#dropdown").animate({top: "-80vh"}, duration=2000)
+        $("#dropdown").animate({top: "-80svh"}, duration=2000)
         dropped = false
     }
 
@@ -115,13 +115,13 @@ function showPanel(panel){
     }
 
     if (active){
-        $("#" + active).animate({top: "-90vh"}, duration=2000)
+        $("#" + active).animate({top: "-90svh"}, duration=2000)
         $("#b" + active).toggleClass("active")
     }
     active = panel
     $("#b" + active).toggleClass("active")
-    $("#" + active).css("top", "100vh")
-    $("#" + active).animate({top: "10vh"}, duration=2000)
+    $("#" + active).css("top", "100svh")
+    $("#" + active).animate({top: "10svh"}, duration=2000)
 }
 
 function burger(){
@@ -132,11 +132,11 @@ function burger(){
     run()
 
     if (dropped){
-        $("#dropdown").animate({top: "-80vh"}, duration=2000)
+        $("#dropdown").animate({top: "-80svh"}, duration=2000)
         dropped = false
     } else{
         dropped = true
-        $("#dropdown").animate({top: "10vh"}, duration=2000)
+        $("#dropdown").animate({top: "10svh"}, duration=2000)
     }
 }
 
@@ -158,12 +158,12 @@ $(window).on("resize", function() {
         return
     }
     if ($(window).width() >= 851){
-        $("nav").css({height: "8vh", width: "60vw", left: "30vw", top: "1vh", display: "flex", opacity: "1"})
-        $("#title").css({height: "9vh", width: "20vw", left: "5vw", top: "0.5vh", fontSize: "20px"})
+        $("nav").css({height: "8svh", width: "60vw", left: "30vw", top: "1svh", display: "flex", opacity: "1"})
+        $("#title").css({height: "9svh", width: "20vw", left: "5vw", top: "0.5svh", fontSize: "20px"})
         $("#burger").css("display", "none")
-        $("#dropdown").css("top", "-90vh")
+        $("#dropdown").css("top", "-90svh")
     } else{
-        $("#title").css({height: "8vh", width: "90vw", top: "1vh", fontSize: "20px"})
+        $("#title").css({height: "8svh", width: "90vw", top: "1svh", fontSize: "20px"})
         $("nav").css("display", "none")
         $("#burger").css({display: "block", opacity: "1"})
     }
