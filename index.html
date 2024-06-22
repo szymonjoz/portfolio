@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Szymon Jóźwiak Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <select id="lang" onChange="changeLang(this.options[this.selectedIndex].value)">
+        <option value="0">EN</option>
+        <option value="1">PL</option>
+    </select>
+    <div id="opener">
+        <div id="title">
+            <div>
+                Szymon Jóźwiak
+            </div>
+            <div>
+                Portfolio
+            </div>
+        </div>
+        <nav>
+            <div id="babout" onclick="collapse('about')">About Me</div>
+            <div id="bproj" onclick="collapse('proj')">Projects</div>
+            <div id="bedu" onclick="collapse('edu')">Education</div>
+            <div id="bcon" onclick="collapse('con')">Contact</div>
+        </nav>
+        <img id="burger" src="burger.svg" onclick="burger()"/>
+    </div>
+    <div id="dropdown">
+        <div onclick="collapse('about')">About Me</div>
+        <div onclick="collapse('proj')">Projects</div>
+        <div onclick="collapse('edu')">Education</div>
+        <div onclick="collapse('con')">Contact</div>
+    </div>
+    <div class="panel" id="about">
+        <div id="aleft">
+            <header>
+                <h2><span>About Me</span></h2>
+            </header>
+            <p>
+                I am a 19-year-old graduate of a technical high school with a specialization in computer science. I will begin part-time higher education in the same field after the summer. Currently, I'm looking for a full-time job as a data scientist or in a similar role. I have taken part in two month-long internships in PC repair stores as a part of my education. Outside of programming, my hobbies include basketball and cooking.
+            </p>
+        </div>
+        <div id="aright">
+            <header>
+                <h2><span>Skills</span></h2>
+            </header>
+            <ul>
+                <li>Python</li>
+                <li>Use of Pandas, Numpy, Plotly, and Scikit-learn libraries</li>
+                <li>Proficiency in R and SQL programming languages</li>
+                <li>HTML, CSS and JavaScript</li>
+                <li>Data analysis and machine learning</li>
+                <li>Knowledge of computer networks and PC architecture</li>
+                <li>Git version control</li>
+                <li>Microsoft Office</li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel" id="proj">
+        <div id="guide">
+            <div onclick="scrollProj(0)" class="guider active"></div>
+            <div onclick="scrollProj(1)" class="guider"></div>
+            <div onclick="scrollProj(2)" class="guider"></div>
+        </div>
+        <div class="project" style="align-items: flex-start">
+            <h1>NBA.com Web Scraper</h1>
+            <p>
+                A Python package designed to collect basketball data across 63 categories, with coverage extending back to the 1946 season. This web scraper allows users to access data already in box score format as well as create custom box scores from stats available only as averages. With advanced filtering options, you can refine queries to access specific data. This project comes with detailed documentation. Data (since the 1996-97 season) is available for download on my Kaggle profile.
+            </p>
+            <div>
+                <a href="https://github.com/szymonjoz/NBAScraper" target=”_blank”>GitHub</a>
+                <a href="https://www.kaggle.com/szymonjwiak/datasets" target=”_blank”>Kaggle</a>
+            </div>
+        </div>
+        <div class="project" style="align-items: flex-end">
+            <h1 style="text-align: right">Interactive plotly visualizations</h1>
+            <p>
+                The first visualization is an interactive graph plotting players' headshots based on their field goal attempts and field goal percentage for a given shot. Shot types can be selected using buttons, enabling easy comparison of player skill at these shots.
+                <br /><br />
+                The second visualization is an interactive plot of all players' shots with generated hot zones based on player efficiency. Users can select from 100 players using a dropdown menu to see how their favorite player shoots in different locations.
+            </p>
+            <div>
+                <a href="https://www.kaggle.com/code/szymonjwiak/best-nba-players-at-each-shot-interactive-dash" target=”_blank” id="firstB">Shots</a>
+                <a href="https://www.kaggle.com/code/szymonjwiak/nba-interactive-shot-charts" target=”_blank” id="secondB">Hotzones</a>
+            </div>
+        </div>
+        <div class="project">
+            <h1>Positionless basketball analysis</h1>
+            <p>
+                Data analysis focused on finding the trend of basketball becoming more positionless. Covering data from 1996 to the present. Analyzing changes in players' physical attributes, stats, advanced metrics, and the distribution of leaders' positions. Then feeding that data into a machine learning algorithm to see if it's harder today to predict player positions.
+            </p>
+            <div>
+                <a href="https://www.kaggle.com/code/szymonjwiak/death-of-positions" target=”_blank”>Kaggle</a>
+                <a href="https://colab.research.google.com/drive/1pzcUu9JysdKjQ7yd9MMqLqwVRcOwIfZy?usp=sharing" target=”_blank”>Colab</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel" id="edu">
+        <h2><span>Education</span></h2>
+        <div class="edugroup" id="edugroup">
+            <div class="card">
+                <div class="cardTitle">
+                    Computer Science
+                </div>
+                <div class="cardDesc">
+                    Electronics Technical High School No. 1 in Warsaw
+                </div>
+                <div class="cardDate">
+                    2019-2024
+                </div>
+            </div>
+        </div>
+        <h2><span>Courses</span></h2>
+        <div class="edugroup" id="coursegroup">
+            <div class="card">
+                <div class="cardTitle">
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/64VRUUEP69LK" target=”_blank”>Google Data Analytics Specialization</a>
+                </div>
+                <div class="cardDesc">
+                    Google - Coursera
+                </div>
+                <div class="cardDate">
+                    2023
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardTitle">
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/3495SUSZ4WFB" target=”_blank”>Applied Data Science with Python</a>
+                </div>
+                <div class="cardDesc">
+                    University of Michigan - Coursera
+                </div>
+                <div class="cardDate">
+                    2023
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardTitle">
+                    <a href="https://www.udemy.com/course/machinelearning" target=”_blank”>Machine Learning A-Z: AI, Python & R</a>
+                </div>
+                <div class="cardDesc">
+                    Udemy
+                </div>
+                <div class="cardDate">
+                    2022
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardTitle">
+                    <a href="https://www.udemy.com/course/100-days-of-code/" target=”_blank”>100 Days of Code: The Complete Python Pro Bootcamp</a>
+                </div>
+                <div class="cardDesc">
+                    Udemy
+                </div>
+                <div class="cardDate">
+                    2020
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel" id="con">
+        <h2 id="linkspan"><span>Links</span></h2>
+        <div id="links">
+            <a href="https://www.linkedin.com/in/szymon-j%C3%B3%C5%BAwiak-49994922a/" class="link" target=”_blank”>
+                <img src="linkedin.svg" alt="Linkedin" />
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/szymonjoz" class="link" target=”_blank”>
+                <img src="github.svg" alt="Github" />
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.kaggle.com/szymonjwiak" class="link" target=”_blank”>
+                <img src="kaggle.svg" alt="Kaggle" />
+                <span>Kaggle</span>
+            </a>
+        </div>
+        <h2  id="formspan"><span>Contact Form</span></h2>
+        <form action="https://formspree.io/f/xleqqjle" method="post">
+            <label id="nameIn">
+                <span>Name:</span><br />
+                <input type="text" name="name" required/>
+            </label>
+            <br />
+            <label id="emailIn">
+                Email:<br />
+                <input type="email" name="email" required/>
+            </label>
+            <button id="buttonIn" type="submit">Send</button>
+            <label id="textIn">
+                <span>Message:</span><br />
+                <textarea name="message" required></textarea>
+            </label>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,545 @@
+@font-face {
+  font-family: Playfair;
+  src: url("Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+:root {
+  --main: #EADBC8;
+  --secondary: #0F2C59;
+}
+*{
+    z-index: 1;
+}
+
+body{
+    color: var(--secondary);
+    font-family: Playfair;
+    margin: 0;
+    overflow: hidden;
+}
+
+#lang{
+    width: 50px;
+    height: 4vh;
+    border: 1px solid var(--secondary);
+    position: fixed;
+    right: 2vw;
+    top: 3vh;
+    z-index: 100;
+    background-color: var(--main);
+}
+#lang:focus{
+    outline: none;
+}
+
+/* TITLE PAGE */
+#opener{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    background-color: var(--main);
+    color: var(--secondary);
+    box-shadow: 8px -10px 20px 0px rgba(66, 68, 90, 1);
+}
+
+#burger{
+    top: 1vh;
+    right: 1vh;
+    position: absolute;
+    height: 8vh;
+    display: none;
+    opacity: 0;
+}
+
+#dropdown{
+    height: 90vh;
+    width: 100vw;
+    top: -90vh;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+#dropdown div{
+    height: 15vh;
+    margin-left: 5vw;
+    width: 90vw;
+    border-bottom: 1px solid var(--secondary);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#dropdown div:last-child{
+    border-bottom: none;
+}
+
+#title{
+    position: absolute;
+    width: 100vw;
+    height: 40vh;
+    left: 0;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+}
+
+nav{
+    width: 80vw;
+    height: 10vh;
+    position: absolute;
+    top: 75vh;
+    left: 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav div{
+    border: 1px solid var(--secondary);
+    width: 20%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: background-color 1s, border 1s, color 1s;
+    cursor: pointer;
+}
+nav div.active{
+    background-color: var(--secondary);
+    color: var(--main);
+}
+nav div:hover{
+    background-color: var(--secondary);
+    color: var(--main);
+    transition: background-color 1s, border 1s;
+}
+
+
+
+.panel{
+    width: 80vw;
+    height: 70vh;
+    left: 10vw;
+    top: 100vh;
+    padding-top: 12vh;
+    position: absolute;
+}
+@media only screen and (max-width: 850px){
+    #title{
+        width: 100vw;
+        height: 180px;
+        left: 0vw;
+        top: 15vh;
+        font-size: 45px;
+        top: calc(40vh - 180px);
+        max-height: 3
+    }
+    #lang{
+        right: unset;
+        left: 2vw;
+    }
+    nav{
+        height: 40vh;
+        width: 90vw;
+        top: 55vh;
+        left: 5vw;
+        flex-direction: column;
+    }
+    nav div{
+        width: 90%;
+        height: 17.5%;
+    }
+    .panel{
+        height: 90vh;
+        padding: 0 10vw;
+        padding-top: 6vh;
+        overflow-y: auto;
+        left: 0;
+    }
+}
+/* ABOUT */
+#about{
+    display: flex;
+    justify-content: space-between;
+}
+
+#aleft, #aright{
+    width: 35vw;
+    height: 60vh;
+}
+#aline{
+    width: 0px;
+    height: 40vh;
+    border-left: 1px solid var(--secondary);
+    margin: 15vh 5vw;
+}
+h2 {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 20px 0 20px;
+   color: var(--secondary)
+}
+
+h2 span {
+    background:#fff;
+    padding:0 10px;
+}
+#about header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+#about p, #about ul{
+    font-size: 18px;
+    width: 90%;
+    padding: 0 5%;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+@media only screen and (max-width: 850px){
+    #about{
+        flex-direction: column;
+    }
+    #aleft, #aright{
+        width: 80vw;
+        padding-bottom: 50px;
+        height: 80vh;
+    }
+}
+/* PROJECT */
+#proj{
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#guide{
+    position: fixed;
+    right: 2vw;
+    height: 100px;
+    top: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+}
+
+.guider{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 17.5px;
+    border: 1px solid var(--secondary);
+    transition: height 0.5s, width 0.5s, background-color 0.5s;
+    cursor: pointer;
+}
+
+.guider:hover{
+    height: 25px;
+    width: 25px;
+    transition: height 0.5s, width 0.5s, background-color 0.5s;
+}
+
+.guider.active{
+    height: 25px;
+    width: 25px;
+    background-color: var(--secondary);
+    transition: height 0.5s, width 0.5s, background-color 0.5s;
+}
+
+
+.project{
+    width: 80vw;
+    height: 90vh;
+    padding: 0 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.project h1{
+    font-size: 80px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.project p{
+    width: 50%;
+    text-align: justify;
+}
+.project div{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.project a{
+    font-size: 18px;
+    border: 1px solid var(--secondary);
+    height: 5vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary);
+    transition: background-color 1s, color 1s;
+}
+.project a:hover{
+    background-color: var(--secondary);
+    color: white;
+    transition: background-color 1s, color 1s;
+}
+
+@media only screen and (max-width: 850px){
+    #guide{
+        flex-direction: row;
+        height: unset;
+        width: 100px;
+        top: calc(100vh - 50px);
+        left: calc(50vw - 50px)
+    }
+    .project{
+        padding: 0 5vw;
+        width: 90vw;
+        min-height: 90vh;
+    }
+    .project h1{
+        font-size: 50px;
+    }
+    .project p{
+        width: 70%;
+        font-size: 14px;
+    }
+    .project a{
+        width: 20vw;
+        font-size: 14px;
+    }
+    .project div{
+        width: 50vw;
+    }
+}
+
+
+/* EDUCATION */
+#edu{
+    overflow-y: scroll;
+    padding-right: 10vw;
+    height: 70vh;
+    padding-bottom: 8vh;
+}
+#edu h2{
+    text-align: left;
+    font-size: 32px;
+}
+.edugroup{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    padding-top: 5vh;
+}
+.edugroup a{
+    color: var(--secondary);
+}
+.edugroup a:visited{
+    color: var(--secondary);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24vw;
+}
+
+#coursegroup{
+    justify-content: space-between;
+    height: auto;
+    row-gap: 3vh;
+}
+
+.cardTitle{
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+.cardDesc{
+    text-align: center;
+}
+
+@media only screen and (max-width: 850px){
+    #edu{
+        height: 90vh;
+        width: 90vw;
+        padding: 5vh 5vw;
+    }
+    .edugroup{
+        flex-direction: column;
+        height: auto;
+        margin: 0;
+        padding-bottom: 5vh;
+    }
+    .card{
+        width: 90vw;
+        padding-bottom: 5vh;
+    }
+}
+
+/* Contact */
+#con{
+    padding-top: 0;
+}
+#con h2{
+    margin: 10vh 0;
+}
+#links{
+    display: flex;
+    padding: 0 10vw;
+    width: 60vw;
+    justify-content: space-between;
+}
+.link{
+    width: 15vw;
+    height: 7vh;
+    background-color: var(--main);
+    border: 1px solid var(--secondary);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: background-color 1s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.link:visited{
+    color: var(--secondary);
+}
+.link:hover{
+    background-color: white;
+    transition: background-color 1s;
+}
+.link img{
+    height: 80%;
+    margin-right: 2vw;
+}
+.link span{
+    font-size: 18px;
+}
+form{
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    grid-template-rows: 10vh 10vh 10vh;
+    width: 60vw;
+    height: 30vh;
+    margin-left: 10vw;
+}
+form input{
+    height: 5vh;
+    width: 25vw;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    font-size: 18px;
+}
+form input:focus{
+    outline-color: var(--secondary);
+    outline-style: solid;
+}
+form button{
+    background-color: white;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    width: 10vw;
+    height: 5vh;
+    font-size: 18px;
+    margin-top: 5vh;
+    font-family: "Playfair Display", serif;
+    cursor: pointer;
+    transition: background-color 1s, color 1s;
+}
+form button:hover{
+    transition: background-color 1s, color 1s;
+    color: white;
+    background-color: var(--secondary);
+}
+form label{
+    font-size: 18px;
+}
+textarea{
+    resize: none;
+    width: 30vw;
+    height: 25vh;
+}
+textarea:focus{
+    outline-color: var(--secondary);
+    outline-style: solid;
+}
+
+#nameIn{
+    grid-area: 1 / 1 / 2 / 2;
+}
+#emailIn{
+    grid-area: 2 / 1 / 3 / 2;
+}
+#buttonIn{
+    grid-area: 3 / 1 / 4 / 2;
+}
+#textIn{
+    grid-area: 1 / 2 / 4 / 3;
+}
+
+@media only screen and (max-width: 850px){
+    #links{
+        flex-direction: column;
+        padding: 0;
+    }
+    #con h2{
+        margin: 5vh 0;
+    }
+    .link{
+        width: 60vw;
+        margin-bottom: 3vh;
+        margin-left: 10vw;
+    }
+    form{
+        width: 80vw;
+        margin: 0;
+        flex-direction: column;
+        grid-template-columns: 80vw;
+        grid-template-rows: 10vh 10vh 25vh 10vh;
+    }
+    textarea, form input{
+        width: 80vw;
+    }
+    #nameIn{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    #emailIn{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    #textIn{
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    #buttonIn{
+        grid-area: 4 / 1 / 5 / 2;
+        width: 60vw;
+        margin-left: 10vw;
+    }
+}
