@@ -19,11 +19,11 @@ body{
 
 #lang{
     width: 50px;
-    height: 4vh;
+    height: 4svh;
     border: 1px solid var(--secondary);
     position: fixed;
     right: 2vw;
-    top: 3vh;
+    top: 3svh;
     z-index: 100;
     background-color: var(--main);
 }
@@ -34,7 +34,7 @@ body{
 /* TITLE PAGE */
 #opener{
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     position: absolute;
     z-index: 3;
     background-color: var(--main);
@@ -43,25 +43,25 @@ body{
 }
 
 #burger{
-    top: 1vh;
-    right: 1vh;
+    top: 1svh;
+    right: 1svh;
     position: absolute;
-    height: 8vh;
+    height: 8svh;
     display: none;
     opacity: 0;
 }
 
 #dropdown{
-    height: 90vh;
+    height: 90svh;
     width: 100vw;
-    top: -90vh;
+    top: -90svh;
     background-color: white;
     position: absolute;
     z-index: 2;
 }
 
 #dropdown div{
-    height: 15vh;
+    height: 15svh;
     margin-left: 5vw;
     width: 90vw;
     border-bottom: 1px solid var(--secondary);
@@ -80,9 +80,9 @@ body{
 #title{
     position: absolute;
     width: 100vw;
-    height: 40vh;
+    height: 40svh;
     left: 0;
-    top: 15vh;
+    top: 15svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,9 +95,9 @@ body{
 
 nav{
     width: 80vw;
-    height: 10vh;
+    height: 10svh;
     position: absolute;
-    top: 75vh;
+    top: 75svh;
     left: 10vw;
     display: flex;
     justify-content: space-between;
@@ -128,10 +128,10 @@ nav div:hover{
 
 .panel{
     width: 80vw;
-    height: 70vh;
+    height: 70svh;
     left: 10vw;
-    top: 100vh;
-    padding-top: 12vh;
+    top: 100svh;
+    padding-top: 12svh;
     position: absolute;
 }
 @media only screen and (max-width: 850px){
@@ -139,9 +139,9 @@ nav div:hover{
         width: 100vw;
         height: 180px;
         left: 0vw;
-        top: 15vh;
+        top: 15svh;
         font-size: 45px;
-        top: calc(40vh - 180px);
+        top: calc(40svh - 180px);
         max-height: 3
     }
     #lang{
@@ -149,9 +149,9 @@ nav div:hover{
         left: 2vw;
     }
     nav{
-        height: 40vh;
+        height: 40svh;
         width: 90vw;
-        top: 55vh;
+        top: 55svh;
         left: 5vw;
         flex-direction: column;
     }
@@ -160,9 +160,9 @@ nav div:hover{
         height: 17.5%;
     }
     .panel{
-        height: 90vh;
+        height: 90svh;
         padding: 0 10vw;
-        padding-top: 6vh;
+        padding-top: 6svh;
         overflow-y: auto;
         left: 0;
     }
@@ -175,13 +175,13 @@ nav div:hover{
 
 #aleft, #aright{
     width: 35vw;
-    height: 60vh;
+    height: 60svh;
 }
 #aline{
     width: 0px;
-    height: 40vh;
+    height: 40svh;
     border-left: 1px solid var(--secondary);
-    margin: 15vh 5vw;
+    margin: 15svh 5vw;
 }
 h2 {
    width: 100%;
@@ -197,7 +197,7 @@ h2 span {
     padding:0 10px;
 }
 #about header{
-    height: 10vh;
+    height: 10svh;
     display: flex;
     align-items: center;
 }
@@ -216,13 +216,13 @@ h2 span {
     #aleft, #aright{
         width: 80vw;
         padding-bottom: 50px;
-        height: 80vh;
+        height: 80svh;
     }
 }
 /* PROJECT */
 #proj{
     width: 100vw;
-    height: 90vh;
+    height: 90svh;
     position: relative;
     left: 0;
     padding: 0;
@@ -235,7 +235,7 @@ h2 span {
     position: fixed;
     right: 2vw;
     height: 100px;
-    top: 45vh;
+    top: 45svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,7 +271,7 @@ h2 span {
 
 .project{
     width: 80vw;
-    height: 90vh;
+    height: 90svh;
     padding: 0 10vw;
     display: flex;
     flex-direction: column;
@@ -295,7 +295,7 @@ h2 span {
 .project a{
     font-size: 18px;
     border: 1px solid var(--secondary);
-    height: 5vh;
+    height: 5svh;
     width: 10vw;
     display: flex;
     justify-content: center;
@@ -315,13 +315,13 @@ h2 span {
         flex-direction: row;
         height: unset;
         width: 100px;
-        top: calc(100vh - 50px);
+        top: calc(100svh - 50px);
         left: calc(50vw - 50px)
     }
     .project{
         padding: 0 5vw;
         width: 90vw;
-        min-height: 90vh;
+        min-height: 90svh;
     }
     .project h1{
         font-size: 50px;
@@ -344,8 +344,8 @@ h2 span {
 #edu{
     overflow-y: scroll;
     padding-right: 10vw;
-    height: 70vh;
-    padding-bottom: 8vh;
+    height: 70svh;
+    padding-bottom: 8svh;
 }
 #edu h2{
     text-align: left;
@@ -354,8 +354,8 @@ h2 span {
 .edugroup{
     display: flex;
     flex-wrap: wrap;
-    height: 20vh;
-    padding-top: 5vh;
+    height: 20svh;
+    padding-top: 5svh;
 }
 .edugroup a{
     color: var(--secondary);
@@ -374,7 +374,7 @@ h2 span {
 #coursegroup{
     justify-content: space-between;
     height: auto;
-    row-gap: 3vh;
+    row-gap: 3svh;
 }
 
 .cardTitle{
@@ -388,19 +388,19 @@ h2 span {
 
 @media only screen and (max-width: 850px){
     #edu{
-        height: 90vh;
+        height: 90svh;
         width: 90vw;
-        padding: 5vh 5vw;
+        padding: 5svh 5vw;
     }
     .edugroup{
         flex-direction: column;
         height: auto;
         margin: 0;
-        padding-bottom: 5vh;
+        padding-bottom: 5svh;
     }
     .card{
         width: 90vw;
-        padding-bottom: 5vh;
+        padding-bottom: 5svh;
     }
 }
 
@@ -409,7 +409,7 @@ h2 span {
     padding-top: 0;
 }
 #con h2{
-    margin: 10vh 0;
+    margin: 10svh 0;
 }
 #links{
     display: flex;
@@ -419,7 +419,7 @@ h2 span {
 }
 .link{
     width: 15vw;
-    height: 7vh;
+    height: 7svh;
     background-color: var(--main);
     border: 1px solid var(--secondary);
     display: flex;
@@ -446,13 +446,13 @@ h2 span {
 form{
     display: grid;
     grid-template-columns: 30vw 30vw;
-    grid-template-rows: 10vh 10vh 10vh;
+    grid-template-rows: 10svh 10svh 10svh;
     width: 60vw;
-    height: 30vh;
+    height: 30svh;
     margin-left: 10vw;
 }
 form input{
-    height: 5vh;
+    height: 5svh;
     width: 25vw;
     border: 1px solid var(--secondary);
     color: var(--secondary);
@@ -467,9 +467,9 @@ form button{
     color: var(--secondary);
     border: 1px solid var(--secondary);
     width: 10vw;
-    height: 5vh;
+    height: 5svh;
     font-size: 18px;
-    margin-top: 5vh;
+    margin-top: 5svh;
     font-family: "Playfair Display", serif;
     cursor: pointer;
     transition: background-color 1s, color 1s;
@@ -485,7 +485,7 @@ form label{
 textarea{
     resize: none;
     width: 30vw;
-    height: 25vh;
+    height: 25svh;
 }
 textarea:focus{
     outline-color: var(--secondary);
@@ -511,11 +511,11 @@ textarea:focus{
         padding: 0;
     }
     #con h2{
-        margin: 5vh 0;
+        margin: 5svh 0;
     }
     .link{
         width: 60vw;
-        margin-bottom: 3vh;
+        margin-bottom: 3svh;
         margin-left: 10vw;
     }
     form{
@@ -523,7 +523,7 @@ textarea:focus{
         margin: 0;
         flex-direction: column;
         grid-template-columns: 80vw;
-        grid-template-rows: 10vh 10vh 25vh 10vh;
+        grid-template-rows: 10svh 10svh 25svh 10svh;
     }
     textarea, form input{
         width: 80vw;
